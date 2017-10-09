@@ -15,7 +15,7 @@
 
 <body>
 
-    <div class="container">
+    <div id="addWindow" class="container">
         <h2>Taks Tracker</h2>
         <p>Add your tasks for easy tracking:</p>
         <form onsubmit="createTask()">
@@ -31,6 +31,22 @@
         </form>
     </div>
 
+    <div style="display: none;" class="container" id="editWindow">
+        <form onsubmit="updateTask()">
+            <input hidden type="text" id="editTaskId">
+            <div class="form-group">
+                <label for="taskName">Name:</label>
+                <input type="text" required class="form-control" id="editTaskName">
+            </div>
+            <div class="form-group">
+                <label for="taskDescription">Description:</label>
+                <textarea rows="3" required class="form-control" id="editTaskDescription"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Apply changes</button>
+            <button class="btn btn-danger">Cancel</button>
+        </form>
+    </div>
+
     <br>
     <hr>
     <br>
@@ -38,6 +54,8 @@
     <div class="container">
         <table class="table" id="tasks"></table>
     </div>
+
+
 </body>
 
 </html>
